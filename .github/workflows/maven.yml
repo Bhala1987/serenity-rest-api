@@ -38,7 +38,7 @@ jobs:
         name: Serenity Report
         path: target/site/serenity
     - name: Minify Serenity Report
-      uses: dorny/gh-action-html-minifier@v1
+      uses: amireshoon/minifyAction@v1.1
       with:
         html_file: target/site/serenity/index.html
         
