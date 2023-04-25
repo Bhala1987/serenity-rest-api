@@ -1,4 +1,4 @@
-package starter.product;
+package product;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;

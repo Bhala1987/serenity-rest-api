@@ -1,4 +1,4 @@
-package starter.product;
+package product;
 
 import lombok.Getter;
 import lombok.Setter;
