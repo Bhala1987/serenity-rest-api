@@ -45,3 +45,8 @@ jobs:
         html_file: 'index.html'
         name: index.html
         path: target/site/serenity/
+    - name: Upload Serenity Report
+      uses: actions/upload-artifact@v2
+      with:
+        name: Serenity Report
+        path: target/site/serenity/index.html
