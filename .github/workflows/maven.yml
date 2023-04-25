@@ -27,8 +27,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Install gh-action-html-minifier
-      uses: dorny/gh-action-html-minifier@v1
+    - name: Minify Css Js and Html files in GitHub Action
+      uses: amireshoon/minifyAction@v1.1
     - name: Run Serenity Tests with Maven command
       run: mvn clean verify -Denvironment=demo
       continue-on-error: true
