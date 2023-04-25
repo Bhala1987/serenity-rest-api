@@ -37,11 +37,15 @@ jobs:
       with:
         name: Serenity Report
         path: target/site/serenity
+    - name: Flatten HTML Report
+      uses: tidwall/flatten@v1
+      with:
+        input: target/site/serenity/index.html
+        output: target/site/serenity/index.flat.html        
     - name: Minify Serenity Report
       uses: amireshoon/minifyAction@v1.1
       with:
-        html_file: target/site/serenity/index.html
-        
+        html_file: target/site/serenity/index.html      
     - uses: actions/upload-artifact@v3
       with:
         name: index.html
@@ -57,4 +61,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Serenity Report
-        path: target/site/serenity/index.html
+        path: target/site/serenity/index.flat.html
