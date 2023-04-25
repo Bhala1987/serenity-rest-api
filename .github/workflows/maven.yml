@@ -27,13 +27,21 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
+    - name: Install gh-action-html-minifier
+      uses: dorny/gh-action-html-minifier@v1
+    - name: Run Serenity Tests with Maven command
       run: mvn clean verify -Denvironment=demo
       continue-on-error: true
-    - uses: actions/upload-artifact@v3
+    - name: Upload Serenity Report
+      uses: actions/upload-artifact@v3
       with:
-        name: report
+        name: Serenity Report
         path: target/site/serenity
+    - name: Minify Serenity Report
+      uses: dorny/gh-action-html-minifier@v1
+      with:
+        html_file: target/site/serenity/index.html
+        
     - uses: actions/upload-artifact@v3
       with:
         name: index.html
