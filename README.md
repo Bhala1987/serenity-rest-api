@@ -26,7 +26,7 @@ software project/build/dependencies management tool.
 
 #### Locally:
 
-1. mvn clean verify -Denvironment=demo
+1. mvn clean verify -Denvironment=demo -DrerunFailingTestsCount=2
    (OR)
    mvn clean verify
 2. Once ran successfully without any issues, we should be able to see the test report under the
